@@ -104,6 +104,7 @@ Qn5: How does production budget correlate with Gross profit
 There's a strong correlation between production budget and Gross profit i.e. if you use more you're guaranteed higher grossing
 
 ![image](https://user-images.githubusercontent.com/119498882/217747688-c93409bc-b6ec-4702-ab24-ed87c069279c.png)
+
 Action and Adventure|Classics|Drama had the highest estimated gross profit of $ 235,1345,000
 Qn6: Which are the top most profitable genres?
 
