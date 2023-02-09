@@ -1,22 +1,37 @@
-# Phase 1 Project
+# Phase 1 Project Carolyne Kambura
 
-You've made it all the way through the first phase of this course - take a minute to celebrate your awesomeness!
+I have made it all the way through the first phase of this course (First Project) - taking a minute to celebrate my awesomeness!
 
 ![awesome](https://raw.githubusercontent.com/learn-co-curriculum/dsc-phase-1-project/master/awesome.gif)
 
-Now you will put your new skills to use with a large end-of-Phase project! This project should take 20 to 30 hours to complete.
-
 ## Project Overview
 
-For this project, you will use exploratory data analysis to generate insights for a business stakeholder.
+This project analyzes the movie industry from 2010 to 2018. The descriptive analytics provides insights on genres that are highly rated, have high production budgets and grossing. The projects also helps explore the relationships between different features including production budget and runtime, production budget and grossing, and domestic and foreign grossing. Microsoft can use the information to make data driven decision on the content that they should focus on.
 
 ### Business Problem
 
 Microsoft sees all the big companies creating original video content and they want to get in on the fun. They have decided to create a new movie studio, but they don’t know anything about creating movies. You are charged with exploring what types of films are currently doing the best at the box office. You must then translate those findings into actionable insights that the head of Microsoft's new movie studio can use to help decide what type of films to create.
 
-### The Data
+ Questions asked during the analytics:
 
-In the folder `zippedData` are movie datasets from:
+  1. What were the movie trends from 2010 - 2018 (i.e. how many movies per genre were produce each year)?
+  2. Which were the highest rated genres?
+  3. Which genres had the highest production budget?
+  4. Was there a correlation betwee production budget and runtime?
+  5. Was there a correlation between production budget and World wide gross profit?
+  6. Which genre had the highest Estimated gross profit?
+  7. Was there a correlation between domestic gross profit and foreign gross profit?
+ 
+ From the analysis, the results will help Microsoft understand:
+
+  1. Which genres to focus on in terms of averageratings and estimated gross profit
+  2. Production budgets for each genres
+  3. How production budget translates to gross profit
+  4. The correlation between how a movie performs domestically and internationally
+
+### Data Sources
+
+The datasets applied in this project were sourced from:
 
 * [Box Office Mojo](https://www.boxofficemojo.com/)
 * [IMDB](https://www.imdb.com/)
@@ -24,42 +39,97 @@ In the folder `zippedData` are movie datasets from:
 * [TheMovieDB](https://www.themoviedb.org/)
 * [The Numbers](https://www.the-numbers.com/)
 
-It is up to you to decide what data from this to use and how to use it. If you want to make this more challenging, you can scrape websites or make API calls to get additional data. If you are feeling overwhelmed or behind (e.g. struggled with the Phase 1 Code Challenge), we recommend you use only the following data files:
 
-* imdb.title.basics
-* imdb.title.ratings
-* bom.movie_gross
+### Methods
+Steps followed:
 
-## Deliverables
+Importing relevant packages used Pandas, Numpy, Matplotlib, Seaborn and Scipy
 
-There are three deliverables for this project:
+### Data Preparation
+  1. Data Extraction :
+  
+The below datasets were extracted for this analysis:
+   - tn.movie_budgets.csv.gz 
+   - bom.movie_gross.csv.gz 
+   - imdb.title.basics.csv.gz 
+   - imdb.title.akas.csv.gz 
+   - rt.movie_info.tsv.gz
+   
+  2. Data cleaning
+  
+ To ensure that data was clean for analysis, the following was done
+ 
+  - Removed duplicates
+  - Used built-in methods to identify and deal with missing values (NaN) 
+  - Removed irrelevant columns and rows
 
-* A **GitHub repository**
-* A **Jupyter Notebook**
-* A **non-technical presentation**
+ 3. Data Wrangling
+ 
+ For easy data analysis and visualization the following was done to form one dataframe especially for the imdb datasets
+  - Combining Data
+  - Indexing Data
+  - Dealing with Categorical Data
+  
+  4. Data Analysis
+This project used descriptive analytics including changes in trends over time & comparitive analysis between film features. This provides meanigul insight in movie industry trends that could help the Microsoft team make well informed decision in their new potencial venture in the film industry.
+ 
+### Results
 
-Review the "Project Submission & Review" page in the "Milestones Instructions" topic for instructions on creating and submitting your deliverables. Refer to the rubric associated with this assignment for specifications describing high-quality deliverables.
+Qn1: What are the movie trends from 2010 to 2018?
+There has been a reduction in the number of movies produced from 2015 to 2018
 
-### Key Points
+![image](https://user-images.githubusercontent.com/119498882/217743292-c47d050b-4fa9-49c8-aa6a-d90f3c01dd5f.png)
 
-* **Your analysis should yield three concrete business recommendations.** The ultimate purpose of exploratory analysis is not just to learn about the data, but to help an organization perform better. Explicitly relate your findings to business needs by recommending actions that you think the business (Microsoft) should take.
+Qn2: Which top 10 single-genre had the highest averagerating?
+The top 10 single-genre films had mostly an averagerating of 6.5 - 7.3, with the highest being Short films with a rating of 8.8 and the lowest being Animation with a rating of 6.5
 
-* **Communicating about your work well is extremely important.** Your ability to provide value to an organization - or to land a job there - is directly reliant on your ability to communicate with them about what you have done and why it is valuable. Create a storyline your audience (the head of Microsoft's new movie studio) can follow by walking them through the steps of your process, highlighting the most important points and skipping over the rest.
+![image](https://user-images.githubusercontent.com/119498882/217744104-e1827757-4fc3-4ade-a81e-09ec5ed5dacb.png)
 
-* **Use plenty of visualizations.** Visualizations are invaluable for exploring your data and making your findings accessible to a non-technical audience. Spotlight visuals in your presentation, but only ones that relate directly to your recommendations. Simple visuals are usually best (e.g. bar charts and line graphs), and don't forget to format them well (e.g. labels, titles).
+Qn3: Which top 10 single-genre had the highest averagerating?
+The below results shows that films with multi-genre have higher averagerating compared to single-genre films with the highest being Comedy,Documentary,Fantasy with a rating of 9.4, and the lowest being Drama,Fantasy,War with a rating of 8.8
 
-## Getting Started
+![image](https://user-images.githubusercontent.com/119498882/217744783-e5647aaf-aebf-4651-98ab-9c5b4d3093a4.png)
 
-Please start by reviewing this assignment, the rubric at the bottom of it, and the "Project Submission & Review" page. If you have any questions, please ask your instructor ASAP.
+Qn3: Which genres had the highest production budget?
+Action|Adventure|Classic|Drama genre films had the highest production budget of $425,000,000 with Drama|Romance, Drama|Kids and Family and Comedy having the same production budget of $300,000,000
 
-Next, we recommend you check out [the Phase 1 Project Templates and Examples repo](https://github.com/learn-co-curriculum/dsc-project-template) and use the MVP template for your project.
+![image](https://user-images.githubusercontent.com/119498882/217745947-39766a6c-f9a6-4d1b-955b-42c11ffa2b5c.png)
 
-Alternatively, you can fork [the Phase 1 Project Repository](https://github.com/learn-co-curriculum/dsc-phase-1-project), clone it locally, and work in the `student.ipynb` file. Make sure to also add and commit a PDF of your presentation to your repository with a file name of `presentation.pdf`.
+Qn4: Does runtime affect production budget?
+Hight production budget does not really equal runtime of the film and vice versa
 
-## Project Submission and Review
+![image](https://user-images.githubusercontent.com/119498882/217747351-fd351817-d402-4b01-9468-b49b84a983cf.png)
 
-Review the "Project Submission & Review" page in the "Milestones Instructions" topic to learn how to submit your project and how it will be reviewed. Your project must pass review for you to progress to the next Phase.
+Qn5: How does production budget correlate with Gross profit
+There's a strong correlation between production budget and Gross profit i.e. if you use more you're guaranteed higher grossing
 
-## Summary
+![image](https://user-images.githubusercontent.com/119498882/217747688-c93409bc-b6ec-4702-ab24-ed87c069279c.png)
+Action and Adventure|Classics|Drama had the highest estimated gross profit of $ 235,1345,000
+Qn6: Which are the top most profitable genres?
 
-This project will give you a valuable opportunity to develop your data science skills using real-world data. The end-of-phase projects are a critical part of the program because they give you a chance to bring together all the skills you've learned, apply them to realistic projects for a business stakeholder, practice communication skills, and get feedback to help you improve. You've got this!
+![image](https://user-images.githubusercontent.com/119498882/217748059-7ccab7e9-97a8-45cc-ac54-45ddbc0e0983.png)
+
+Qn7: What's the relationship between Domestic gross and Foreign gross?
+The results show a strong linear relationship between domestic and foreign gross. i.e. a movie that performs well locally will perform well internationally.
+
+![image](https://user-images.githubusercontent.com/119498882/217748678-769aaae0-fbc2-4679-8e1c-dce998afbc94.png)
+
+### Conclusion
+
+Key takeaways:
+
+1. Multi-genre films perform well than single-genre films
+2. Action and Adventure|Classics|Drama had the highest production budget and estimated gross profit
+3. There's no relationship between runtime for a movie and production budget and vice versa
+4. Films that perform well domestically will perform well internationally
+5. There's a positive correlation between production budget and gross profits
+
+### Recommendation
+
+1. Microsoft should target to produce more multi-genre films with a key focus on Action and Adventure|Classics|Drama
+
+### Further Work
+1. Compare studio productions and identify those that have successfully done low-budget films with high grossing
+2. Analyze how many movies Microsoft should produce per year
+3. Analyze the best time of the year (month) to release different film genres
+
